@@ -119,7 +119,7 @@ $(document).on('submit', '#hospitalCreate', function(e) {
     e.preventDefault();
     const form = this;
     ajaxRequest({
-        url: '/admin/hospitals/create',
+        url: form.action,
         method: 'POST',
         data: serialize(form)
     }, response => {

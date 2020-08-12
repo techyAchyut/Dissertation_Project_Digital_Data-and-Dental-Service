@@ -2,100 +2,85 @@
     <div class="modal-content">
         <div class="modal-header">
             <div style="display: flex;justify-content: space-between;">
-                <h3 class="modal-title">Add New Hospital</h3>
+                <h3 class="modal-title">Add New Doctor</h3>
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><span
                         class="mdi mdi-close"></span></button>
             </div>
         </div>
         <div class="modal-body">
-            <form class="form-horizontal" action="/admin/hospitals/create" id="hospitalCreate">
+            <form class="form-horizontal" action="/admin/doctors/create" id="hospitalCreate">
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Hospital's Name</label>
+                    <label class="col-sm-3 control-label">Salutation</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="Hospital's Name" class="form-control form-control-sm" name="name">
-                        <div class="alert error-label" error-for="name"></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Est. Date</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="est_date" placeholder="Established Date" class="form-control form-control-sm datePicker">
-                        <div class="alert error-label" error-for="est_date"></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Type</label>
-                    <div class="col-sm-9">
-                        <select name="type" class="form-control form-control-sm">
-                            <option value="">Select Hospital Type</option>
-                            <option value="Government">Government</option>
-                            <option value="Semi-Government">Semi-Government</option>
-                            <option value="Private">Private</option>
+                        <select name="title" class="form-control form-control-sm">
+                            <option value="">Select Salutation</option>
+                            <option value="Dr.">Dr</option>
+                            <option value="Sr. Dr.">Sr. Dr</option>
+                            <option value="MD">MD</option>
+                            <option value="MBBS">MBBS</option>
                         </select>
-                        <div class="alert error-label" error-for="type"></div>
+                        <div class="alert error-label" error-for="title"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Email</label>
+                    <label class="col-sm-3 control-label">First Name</label>
                     <div class="col-sm-9">
-                        <input type="email" name="email" placeholder="Email Address" class="form-control form-control-sm">
-                        <div class="alert error-label" error-for="email"></div>
+                        <input type="text" name="firstName" placeholder="First Name" class="form-control form-control-sm">
+                        <div class="alert error-label" error-for="firstName"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Phone</label>
+                    <label class="col-sm-3 control-label">Last Name</label>
                     <div class="col-sm-9">
-                        <input type="text" name="telephone" placeholder="Hospital's Contact" class="form-control form-control-sm">
-                        <div class="alert error-label" error-for="telephone"></div>
+                        <input type="text" name="lastName" placeholder="Last Name" class="form-control form-control-sm">
+                        <div class="alert error-label" error-for="lastName"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Add1</label>
+                    <label class="col-sm-3 control-label">Gender</label>
                     <div class="col-sm-9">
-                        <input type="text" name="add1" placeholder="Street Address" class="form-control form-control-sm">
-                        <div class="alert error-label" error-for="add1"></div>
+                        <select name="gender" class="form-control form-control-sm">
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="alert error-label" error-for="gender"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Add2</label>
+                    <label class="col-sm-3 control-label">Facebook</label>
                     <div class="col-sm-9">
-                        <input type="text" name="add2" placeholder="Address 2" class="form-control form-control-sm">
-                        <div class="alert error-label" error-for="add2"></div>
+                        <input type="text" name="facebook" placeholder="Link to facebook" class="form-control form-control-sm">
+                        <div class="alert error-label" error-for="facebook"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">City</label>
+                    <label class="col-sm-3 control-label">Twitter</label>
                     <div class="col-sm-9">
-                        <input type="text" name="city" placeholder="City" class="form-control form-control-sm">
-                        <div class="alert error-label" error-for="city"></div>
+                        <input type="text" name="twiter" placeholder="Link to twitter" class="form-control form-control-sm">
+                        <div class="alert error-label" error-for="twiter"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Zip</label>
+                    <label class="col-sm-3 control-label">Google+</label>
                     <div class="col-sm-9">
-                        <input type="text" name="zip" placeholder="Zip/Postal Code" class="form-control form-control-sm">
-                        <div class="alert error-label" error-for="zip"></div>
+                        <input type="text" name="google" placeholder="Link to Google+" class="form-control form-control-sm">
+                        <div class="alert error-label" error-for="google"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">State</label>
+                    <label class="col-sm-3 control-label">Quote</label>
                     <div class="col-sm-9">
-                        <input type="text" name="state" placeholder="State/Province" class="form-control form-control-sm">
-                        <div class="alert error-label" error-for="state"></div>
+                        <textarea name="quote" placeholder="Personal Quote" class="form-control form-control-sm"></textarea>
+                        <div class="alert error-label" error-for="quote"></div>
                     </div>
                 </div>
                 <div class="xs-pt-15 text-right">
                     <button class="btn btn-space btn-default" type="button" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-space btn-primary">Add Hospital</button>
+                    <button type="submit" class="btn btn-space btn-primary">Add Doctor</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-<script>
-    $('.datePicker').datepicker({
-        autoclose:true,
-        format: 'yyyy-mm-dd'
-    });
-</script>

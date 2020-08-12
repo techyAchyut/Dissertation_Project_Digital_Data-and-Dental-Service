@@ -2,99 +2,85 @@
     <div class="modal-content">
         <div class="modal-header">
             <div style="display: flex;justify-content: space-between;">
-                <h3 class="modal-title">EDIT - {{ hospital.name }}</h3>
+                <h3 class="modal-title">EDIT - {{ doctor.title }} {{doctor.firstName}} {{doctor.lastName}}</h3>
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><span
                         class="mdi mdi-close"></span></button>
             </div>
         </div>
         <div class="modal-body">
-            <form class="form-horizontal" action="/admin/hospital/{{ hospital.id }}/update" id="hospitalUpdate">
+            <form class="form-horizontal" action="/admin/doctor/{{ doctor.id }}/update" id="hospitalCreate">
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Hospital's Name</label>
+                    <label class="col-sm-3 control-label">Salutation</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="Hospital's Name" class="form-control form-control-sm" name="name" value="{{ hospital.name }}">
-                        <div class="alert error-label" error-for="name"></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Est. Date</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="est_date" placeholder="Established Date" class="form-control form-control-sm datePicker" value="{{ date hospital.est_date }}">
-                        <div class="alert error-label" error-for="est_date"></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Type</label>
-                    <div class="col-sm-9">
-                        <select name="type" class="form-control form-control-sm">
-                            <option value="">Select Hospital Type</option>
-                            <option value="Government" {{#isEqual hospital.type 'Government'}} selected {{/isEqual}} >Government</option>
-                            <option value="Semi-Government" {{#isEqual hospital.type 'Semi-Government' }} selected {{/isEqual}}>Semi-Government</option>
-                            <option value="Private" {{#isEqual hospital.type 'Private' }} selected {{/isEqual}}>Private</option>
+                        <select name="title" class="form-control form-control-sm">
+                            <option value="">Select Salutation</option>
+                            <option value="Dr." {{#isEqual doctor.title 'Dr.'}} selected {{/isEqual}}>Dr</option>
+                            <option value="Sr. Dr." {{#isEqual doctor.title 'Sr. Dr.'}} selected {{/isEqual}}>Sr. Dr</option>
+                            <option value="MD" {{#isEqual doctor.title 'MD'}} selected {{/isEqual}}>MD</option>
+                            <option value="MBBS" {{#isEqual doctor.title 'MBBS'}} selected {{/isEqual}}>MBBS</option>
                         </select>
-                        <div class="alert error-label" error-for="type"></div>
+                        <div class="alert error-label" error-for="title"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Email</label>
+                    <label class="col-sm-3 control-label">First Name</label>
                     <div class="col-sm-9">
-                        <input type="email" name="email" placeholder="Email Address" class="form-control form-control-sm" value="{{ hospital.email }}">
-                        <div class="alert error-label" error-for="email"></div>
+                        <input type="text" name="firstName" placeholder="First Name" class="form-control form-control-sm" value="{{doctor.firstName}}">
+                        <div class="alert error-label" error-for="firstName"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Phone</label>
+                    <label class="col-sm-3 control-label">Last Name</label>
                     <div class="col-sm-9">
-                        <input type="text" name="telephone" placeholder="Hospital's Contact" class="form-control form-control-sm" value="{{ hospital.telephone }}">
-                        <div class="alert error-label" error-for="telephone"></div>
+                        <input type="text" name="lastName" placeholder="Last Name" class="form-control form-control-sm" value="{{doctor.lastName}}">
+                        <div class="alert error-label" error-for="lastName"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Add1</label>
+                    <label class="col-sm-3 control-label">Gender</label>
                     <div class="col-sm-9">
-                        <input type="text" name="add1" placeholder="Street Address" class="form-control form-control-sm" value="{{ hospital.add1 }}">
-                        <div class="alert error-label" error-for="add1"></div>
+                        <select name="gender" class="form-control form-control-sm">
+                            <option value="">Select Gender</option>
+                            <option value="Male" {{#isEqual doctor.gender 'Male'}} selected {{/isEqual}}>Male</option>
+                            <option value="Female" {{#isEqual doctor.gender 'Female'}} selected {{/isEqual}}>Female</option>
+                            <option value="Other" {{#isEqual doctor.gender 'Other'}} selected {{/isEqual}}>Other</option>
+                        </select>
+                        <div class="alert error-label" error-for="gender"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Add2</label>
+                    <label class="col-sm-3 control-label">Facebook</label>
                     <div class="col-sm-9">
-                        <input type="text" name="add2" placeholder="Address 2" class="form-control form-control-sm" value="{{ hospital.add2 }}">
-                        <div class="alert error-label" error-for="add2"></div>
+                        <input type="text" name="facebook" placeholder="Link to facebook" class="form-control form-control-sm" value="{{doctor.facebook}}">
+                        <div class="alert error-label" error-for="facebook"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">City</label>
+                    <label class="col-sm-3 control-label">Twitter</label>
                     <div class="col-sm-9">
-                        <input type="text" name="city" placeholder="City" class="form-control form-control-sm" value="{{ hospital.city }}">
-                        <div class="alert error-label" error-for="city"></div>
+                        <input type="text" name="twiter" placeholder="Link to twitter" class="form-control form-control-sm" value="{{doctor.twiter}}">
+                        <div class="alert error-label" error-for="twiter"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">Zip</label>
+                    <label class="col-sm-3 control-label">Google+</label>
                     <div class="col-sm-9">
-                        <input type="text" name="zip" placeholder="Zip/Postal Code" class="form-control form-control-sm" value="{{ hospital.zip }}">
-                        <div class="alert error-label" error-for="zip"></div>
+                        <input type="text" name="google" placeholder="Link to Google+" class="form-control form-control-sm" value="{{doctor.google}}">
+                        <div class="alert error-label" error-for="google"></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">State</label>
+                    <label class="col-sm-3 control-label">Quote</label>
                     <div class="col-sm-9">
-                        <input type="text" name="state" placeholder="State/Province" class="form-control form-control-sm" value="{{ hospital.state }}">
-                        <div class="alert error-label" error-for="state"></div>
+                        <textarea name="quote" placeholder="Personal Quote" class="form-control form-control-sm">{{{doctor.quote}}}</textarea>
+                        <div class="alert error-label" error-for="quote"></div>
                     </div>
                 </div>
                 <div class="xs-pt-15 text-right">
                     <button class="btn btn-space btn-default" type="button" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-space btn-primary">Update Hospital</button>
+                    <button type="submit" class="btn btn-space btn-primary">Update Doctor</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-<script>
-    $('.datePicker').datepicker({
-        autoclose:true,
-        format: 'yyyy-mm-dd'
-    });
-</script>

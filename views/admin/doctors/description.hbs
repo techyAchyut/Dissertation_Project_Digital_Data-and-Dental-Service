@@ -2,16 +2,16 @@
     <div class="modal-content" style="max-width: 900px;">
         <div class="modal-header">
             <div style="display: flex;justify-content: space-between;">
-                <h3 class="modal-title">{{ hospital.name }}</h3>
+                <h3 class="modal-title">{{ doctor.title }} {{doctor.firstName}} {{doctor.lastName}}</h3>
                 <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><span
                         class="mdi mdi-close"></span></button>
             </div>
         </div>
         <div class="modal-body">
-            <form action="/admin/hospital/{{ hospital.id }}/update" id="hospitalUpdate">
+            <form action="/admin/doctor/{{ doctor.id }}/update" id="hospitalUpdate">
                 <div class="form-group">
-                    <label>Hospital's Description</label>
-                    <textarea name="description" rows="15" class="form-control descriptionField">{{{ hospital.description }}}</textarea>
+                    <label>Doctor's Description</label>
+                    <textarea name="description" rows="15" class="form-control descriptionField">{{{ doctor.description }}}</textarea>
                     <div class="alert error-label" error-for="name"></div>
                 </div>
                 <div class="xs-pt-15 text-right">
@@ -26,5 +26,5 @@
 <script>
     $('.descriptionField').summernote({
         height: 350
-    })
+    });
 </script>

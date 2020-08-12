@@ -5,11 +5,11 @@
                     class="mdi mdi-close"></span></button>
         </div>
         <div class="modal-body">
-            <form action="/admin/hospital/{{ hospital.id }}/delete" id="hospitalUpdate">
+            <form action="/admin/doctor/{{ doctor.id }}/delete" id="hospitalUpdate">
                 <div class="text-center">
                     <div class="text-danger"><span class="modal-main-icon mdi mdi-close-circle-o"></span></div>
                     <h3>Are you sure you want to remove?</h3>
-                    <h4>{{ hospital.name }}</h4>
+                    <h4>{{ doctor.title }} {{doctor.firstName}} {{doctor.lastName}}</h4>
                     <div class="xs-mt-50">
                         <button type="button" data-dismiss="modal" class="btn btn-space btn-default">Cancel</button>
                         <button type="submit" class="btn btn-space btn-danger">Remove</button>

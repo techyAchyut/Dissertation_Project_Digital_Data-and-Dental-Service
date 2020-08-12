@@ -25,7 +25,9 @@
                     <td>{{this.dataValues.title}} {{this.dataValues.firstName}} {{this.dataValues.lastName}}</td>
                     <td>{{this.dataValues.gender}}</td>
                     <td>{{this.dataValues.quote}}</td>
-                    <td>{{this.dataValues.facebook}} <br> {{this.dataValues.twiter}} <br>{{this.dataValues.google}}</td>
+                    <td><a href="{{this.dataValues.facebook}}" target="_blank">{{this.dataValues.facebook}}</a> <br> 
+                    <a href="{{this.dataValues.twiter}}" target="_blank">{{this.dataValues.twiter}}</a> <br>
+                    <a href="{{this.dataValues.google}}" target="_blank">{{this.dataValues.google}}</a></td>
                     <td>
                         <button type="button" class="btn btn-secondary btn-circle"
                             data-modal-route="/admin/doctor/{{this.dataValues.id}}/description">
