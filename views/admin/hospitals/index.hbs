@@ -1,0 +1,59 @@
+<div class="panel panel-default panel-table">
+    <div class="panel-heading">
+        <strong class="text-primary" style="font-size: 25px;">Hospitals</strong>
+        &emsp;<button type="button" class="btn btn-primary" data-modal-route="/admin/hospitals/add">Add Hospital</button>
+        <div class="tools dropdown">
+            <span class="icon mdi mdi-download"></span>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>City</th>
+                    <th>Telephone</th>
+                    <th>Email</th>
+                    <th>Description</th>
+                    <th>Images</th>
+                    <th class="actions" style="width: 200px;">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each hospital.data  }}
+                <tr>
+                    <td>{{this.dataValues.name}}</td>
+                    <td>{{this.dataValues.type}}</td>
+                    <td>{{this.dataValues.city}}</td>
+                    <td>{{this.dataValues.telephone}}</td>
+                    <td>{{this.dataValues.email}}</td>
+                    <td>
+                        <button type="button" class="btn btn-secondary btn-circle"
+                            data-modal-route="/admin/hospital/{{this.dataValues.id}}/description">
+                            <i class="mdi mdi-text-format"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-secondary btn-circle loadImageModal" data-table="hospitals" data-id="{{this.dataValues.id}}"
+                            data-toggle="modal" data-target="#md-footer-primary">
+                            <i class="mdi mdi-collection-image-o"></i>
+                        </button>
+                    </td>
+                    <td style="text-align: right;">
+                        <button type="button" class="btn btn-default" data-modal-route="/admin/hospital/{{this.dataValues.id}}/edit">
+                            <i class="mdi mdi-edit"></i> &nbsp;Edit
+                        </button>
+                        <button type="button" class="btn btn-danger" data-modal-route="/admin/hospital/{{this.dataValues.id}}/delete">
+                            <i class="mdi mdi-delete"></i> &nbsp;Remove
+                        </button>
+                    </td>
+                </tr>
+                {{/each  }}
+            </tbody>
+        </table>
+        <div style="padding-left: 20px;">
+            {{{ paginate hospital '/admin/hospitals' }}}
+        </div>
+    </div>
+</div>
