@@ -28,8 +28,8 @@ router.post('/admin/doctors/create', [
     body('firstName').exists({checkFalsy:true}).withMessage('First name field is required'),
     body('lastName').exists({checkFalsy:true}).withMessage('Last name field is required'),
     body('gender').exists({checkFalsy:true}).withMessage('Gender field is required'),
-    body('quote').exists({checkFalsy:true}).withMessage('Quote field is required')
-    // body('description').exists({checkFalsy:true}).withMessage('Description field is required'),
+    body('quote').exists({checkFalsy:true}).withMessage('Quote field is required'),
+    body('position').exists({checkFalsy:true}).withMessage('Position field is required'),
 ], auth, function(request, response) {
     try {
         validationResult(request).throw();

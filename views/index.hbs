@@ -959,28 +959,31 @@
 			</section>
 
 
+			{{#each hospitals }}
 			<section class="vc_row wpb_row vc_row-fluid no_padding">
 				<div class="container">
 					<div class="row">
 						<div class="wpb_column vc_column_container col-sm-12">
 							<div class="wpb_wrapper">
 								<div class="vc_row wpb_row vc_inner vc_row-fluid">
+									{{#each this  }}
 									<div class="wpb_column vc_column_container col-sm-4">
 										<div class="wpb_wrapper">
 
 											<div class="wpb_single_image wpb_content_element vc_align_center">
-												<h2 class="wpb_heading wpb_singleimage_heading">FMS International Dental
-													Centers</h2>
+												<h2 class="wpb_heading wpb_singleimage_heading">
+													{{ this.dataValues.name }}
+												</h2>
 												<figure class="wpb_wrapper vc_figure">
 													<div class="vc_single_image-wrapper   vc_box_border_grey"><img
 															width="359" height="259"
-															src="../i2.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/FMS-INTERNATIONAL-DENTAL-CENTER-1aaff.jpg?fit=359%2C259&amp;ssl=1"
+																{{#if this.image  }}
+																src="{{ this.image.dataValues.path }}"
+																{{else  }}
+																	src="/my-uploads/file-1596996173361.jpeg"
+																{{/if  }}
 															class="vc_single_image-img attachment-full jetpack-lazy-image"
-															alt="FMS INTERNATIONAL DENTAL CENTER"
-															data-lazy-srcset="https://i2.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/FMS-INTERNATIONAL-DENTAL-CENTER-1.jpg?w=359&amp;ssl=1 359w, https://i2.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/FMS-INTERNATIONAL-DENTAL-CENTER-1.jpg?resize=300%2C216&amp;ssl=1 300w"
-															data-lazy-sizes="(max-width: 359px) 100vw, 359px"
-															data-lazy-src="https://i2.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/FMS-INTERNATIONAL-DENTAL-CENTER-1.jpg?fit=359%2C259&amp;ssl=1&amp;is-pending-load=1"
-															srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+															alt="{{ this.dataValues.name }}">
 													</div>
 												</figure>
 											</div>
@@ -991,7 +994,7 @@
 
 
 
-												<a href="https://fmsdental.com/visit-guide/" title="" target="">
+												<a href="/visit-guide/" title="" target="">
 
 
 
@@ -1009,7 +1012,7 @@
 
 
 													<div class="link centered">
-														<a href="https://fmsdental.com/visit-guide/"
+														<a href="/visit-guide/"
 															class="btn btn-xs btn-secondary"><strong>More</strong></a>
 													</div>
 
@@ -1021,304 +1024,14 @@
 
 										</div>
 									</div>
-									<div class="wpb_column vc_column_container col-sm-4">
-										<div class="wpb_wrapper">
-
-											<div class="wpb_single_image wpb_content_element vc_align_center">
-												<h2 class="wpb_heading wpb_singleimage_heading">FMS DENTAL HOSPITAL
-													Koti, HYDERABAD</h2>
-												<figure class="wpb_wrapper vc_figure">
-													<div class="vc_single_image-wrapper   vc_box_border_grey"><img
-															width="359" height="259"
-															src="../i1.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/OPERATION-THEATERaaff.jpg?fit=359%2C259&amp;ssl=1"
-															class="vc_single_image-img attachment-full jetpack-lazy-image"
-															alt=""
-															data-lazy-srcset="https://i1.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/OPERATION-THEATER.jpg?w=359&amp;ssl=1 359w, https://i1.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/OPERATION-THEATER.jpg?resize=300%2C216&amp;ssl=1 300w"
-															data-lazy-sizes="(max-width: 359px) 100vw, 359px"
-															data-lazy-src="https://i1.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/OPERATION-THEATER.jpg?fit=359%2C259&amp;ssl=1&amp;is-pending-load=1"
-															srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-													</div>
-												</figure>
-											</div>
-											<!-- ========================== TEASER BOX ==========================-->
-
-											<div
-												class="teaser_box wpb_content_element text-center  skincolored_section    with_button ">
-
-
-
-												<a href="fms-dental-hospitals-koti/index.html" title="" target="">
-
-
-
-												</a>
-
-
-
-												<div class="content text-center boxed  with_button ">
-
-													<div class="hgroup">
-														<h4>In-house OT, ICU &amp; Inpatient facility</h4>
-														<p>Know more</p>
-													</div>
-
-
-
-													<div class="link centered">
-														<a href="fms-dental-hospitals-koti/index.html"
-															class="btn btn-xs btn-secondary"><strong>More</strong></a>
-													</div>
-
-												</div>
-
-											</div>
-
-											<!-- END======================= TEASER BOX ==========================-->
-
-										</div>
-									</div>
-									<div class="wpb_column vc_column_container col-sm-4">
-										<div class="wpb_wrapper">
-
-											<div class="wpb_single_image wpb_content_element vc_align_center">
-												<h2 class="wpb_heading wpb_singleimage_heading">FMS DENTAL CLINICS , HYD
-													(10 centers)</h2>
-												<figure class="wpb_wrapper vc_figure">
-													<div class="vc_single_image-wrapper   vc_box_border_grey"><img
-															width="359" height="259"
-															src="../i1.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/FMS-DENTAL-Langar-Houseaaff.jpg?fit=359%2C259&amp;ssl=1"
-															class="vc_single_image-img attachment-full jetpack-lazy-image"
-															alt=""
-															data-lazy-srcset="https://i1.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/FMS-DENTAL-Langar-House.jpg?w=359&amp;ssl=1 359w, https://i1.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/FMS-DENTAL-Langar-House.jpg?resize=300%2C216&amp;ssl=1 300w"
-															data-lazy-sizes="(max-width: 359px) 100vw, 359px"
-															data-lazy-src="https://i1.wp.com/www.fmsdental.com/wp-content/uploads/2019/08/FMS-DENTAL-Langar-House.jpg?fit=359%2C259&amp;ssl=1&amp;is-pending-load=1"
-															srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-													</div>
-												</figure>
-											</div>
-											<!-- ========================== TEASER BOX ==========================-->
-
-											<div
-												class="teaser_box wpb_content_element text-center  skincolored_section    with_button ">
-
-
-
-												<a href="contact-us/index.html" title="" target="">
-
-
-
-												</a>
-
-
-
-												<div class="content text-center boxed  with_button ">
-
-													<div class="hgroup">
-														<h4>Patient &amp; Visitor Guide</h4>
-														<p>Know more</p>
-													</div>
-
-
-
-													<div class="link centered">
-														<a href="contact-us/index.html"
-															class="btn btn-xs btn-secondary"><strong>More</strong></a>
-													</div>
-
-												</div>
-
-											</div>
-
-											<!-- END======================= TEASER BOX ==========================-->
-
-										</div>
-									</div>
+									{{/each  }}
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-
-
-			<section class="vc_row wpb_row vc_row-fluid no_padding">
-				<div class="container">
-					<div class="row">
-						<div class="wpb_column vc_column_container col-sm-12">
-							<div class="wpb_wrapper">
-								<div class="vc_row wpb_row vc_inner vc_row-fluid">
-									<div class="wpb_column vc_column_container col-sm-4">
-										<div class="wpb_wrapper">
-
-											<div class="wpb_single_image wpb_content_element vc_align_center">
-												<h2 class="wpb_heading wpb_singleimage_heading">THE FMS DENTAL LAB</h2>
-												<figure class="wpb_wrapper vc_figure">
-													<div class="vc_single_image-wrapper   vc_box_border_grey"><img
-															width="360" height="185"
-															src="../i1.wp.com/www.fmsdental.com/wp-content/uploads/2020/01/Hyderabad-Dental-Lab6cfd.jpg?fit=360%2C185&amp;ssl=1"
-															class="vc_single_image-img attachment-full jetpack-lazy-image"
-															alt=""
-															data-lazy-srcset="https://i1.wp.com/www.fmsdental.com/wp-content/uploads/2020/01/Hyderabad-Dental-Lab.jpg?w=360&amp;ssl=1 360w, https://i1.wp.com/www.fmsdental.com/wp-content/uploads/2020/01/Hyderabad-Dental-Lab.jpg?resize=300%2C154&amp;ssl=1 300w"
-															data-lazy-sizes="(max-width: 360px) 100vw, 360px"
-															data-lazy-src="https://i1.wp.com/www.fmsdental.com/wp-content/uploads/2020/01/Hyderabad-Dental-Lab.jpg?fit=360%2C185&amp;ssl=1&amp;is-pending-load=1"
-															srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-													</div>
-												</figure>
-											</div>
-											<!-- ========================== TEASER BOX ==========================-->
-
-											<div
-												class="teaser_box wpb_content_element text-center  skincolored_section    with_button ">
-
-
-
-												<a href="the-fms-dental-lab/index.html" title="" target="">
-
-
-
-												</a>
-
-
-
-												<div class="content text-center boxed  with_button ">
-
-													<div class="hgroup">
-														<h4>Advanced CAD-CAM Laboratory</h4>
-														<p>For Precise, fast &amp; customized solutions</p>
-													</div>
-
-
-
-													<div class="link centered">
-														<a href="the-fms-dental-lab/index.html"
-															class="btn btn-xs btn-secondary"><strong>More</strong></a>
-													</div>
-
-												</div>
-
-											</div>
-
-											<!-- END======================= TEASER BOX ==========================-->
-
-										</div>
-									</div>
-									<div class="wpb_column vc_column_container col-sm-4">
-										<div class="wpb_wrapper">
-
-											<div class="wpb_single_image wpb_content_element vc_align_center">
-												<h2 class="wpb_heading wpb_singleimage_heading">DENTAL EDUCATION</h2>
-												<figure class="wpb_wrapper vc_figure">
-													<div class="vc_single_image-wrapper   vc_box_border_grey"><img
-															width="360" height="180"
-															src="../i0.wp.com/www.fmsdental.com/wp-content/uploads/2020/01/Sri-Sai-College-of-Dental-Surgery-FMS-DENTALd578.jpg?fit=360%2C180&amp;ssl=1"
-															class="vc_single_image-img attachment-full jetpack-lazy-image"
-															alt="Sri-Sai-College-of-Dental-Surgery-FMS-DENTAL"
-															data-lazy-srcset="https://i0.wp.com/www.fmsdental.com/wp-content/uploads/2020/01/Sri-Sai-College-of-Dental-Surgery-FMS-DENTAL.jpg?w=360&amp;ssl=1 360w, https://i0.wp.com/www.fmsdental.com/wp-content/uploads/2020/01/Sri-Sai-College-of-Dental-Surgery-FMS-DENTAL.jpg?resize=300%2C150&amp;ssl=1 300w"
-															data-lazy-sizes="(max-width: 360px) 100vw, 360px"
-															data-lazy-src="https://i0.wp.com/www.fmsdental.com/wp-content/uploads/2020/01/Sri-Sai-College-of-Dental-Surgery-FMS-DENTAL.jpg?fit=360%2C180&amp;ssl=1&amp;is-pending-load=1"
-															srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-													</div>
-												</figure>
-											</div>
-											<!-- ========================== TEASER BOX ==========================-->
-
-											<div
-												class="teaser_box wpb_content_element text-center  skincolored_section    with_button ">
-
-
-
-												<a href="dental-education/index.html" title="" target="">
-
-
-
-												</a>
-
-
-
-												<div class="content text-center boxed  with_button ">
-
-													<div class="hgroup">
-														<h4>Sri Sai College Of Dental Surgery</h4>
-														<p>A sister concern of FMS DENTAL</p>
-													</div>
-
-
-
-													<div class="link centered">
-														<a href="dental-education/index.html"
-															class="btn btn-xs btn-secondary"><strong>More</strong></a>
-													</div>
-
-												</div>
-
-											</div>
-
-											<!-- END======================= TEASER BOX ==========================-->
-
-										</div>
-									</div>
-									<div class="wpb_column vc_column_container col-sm-4">
-										<div class="wpb_wrapper">
-
-											<div class="wpb_single_image wpb_content_element vc_align_center">
-												<h2 class="wpb_heading wpb_singleimage_heading">GUIDE ACADEMY</h2>
-												<figure class="wpb_wrapper vc_figure">
-													<div class="vc_single_image-wrapper   vc_box_border_grey"><img
-															width="315" height="182"
-															src="../i0.wp.com/www.fmsdental.com/wp-content/uploads/2015/09/Advanced-Dental-Courses-GUIDE-Academy-198d9.png?fit=315%2C182&amp;ssl=1"
-															class="vc_single_image-img attachment-full jetpack-lazy-image"
-															alt=""
-															data-lazy-srcset="https://i0.wp.com/www.fmsdental.com/wp-content/uploads/2015/09/Advanced-Dental-Courses-GUIDE-Academy-1.png?w=315&amp;ssl=1 315w, https://i0.wp.com/www.fmsdental.com/wp-content/uploads/2015/09/Advanced-Dental-Courses-GUIDE-Academy-1.png?resize=300%2C173&amp;ssl=1 300w"
-															data-lazy-sizes="(max-width: 315px) 100vw, 315px"
-															data-lazy-src="https://i0.wp.com/www.fmsdental.com/wp-content/uploads/2015/09/Advanced-Dental-Courses-GUIDE-Academy-1.png?fit=315%2C182&amp;ssl=1&amp;is-pending-load=1"
-															srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-													</div>
-												</figure>
-											</div>
-											<!-- ========================== TEASER BOX ==========================-->
-
-											<div
-												class="teaser_box wpb_content_element text-center  skincolored_section    with_button ">
-
-
-
-												<a href="#" title="" target="">
-
-
-
-												</a>
-
-
-
-												<div class="content text-center boxed  with_button ">
-
-													<div class="hgroup">
-														<h4>An FMS DENTAL initiative</h4>
-														<p>Share and Upgrade Knowledge</p>
-													</div>
-
-
-
-													<div class="link centered">
-														<a href="#"
-															class="btn btn-xs btn-secondary"><strong>More</strong></a>
-													</div>
-
-												</div>
-
-											</div>
-
-											<!-- END======================= TEASER BOX ==========================-->
-
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
+			{{/each  }}
 
 			<section class="vc_row wpb_row vc_row-fluid no_padding vbottom vc_custom_1566567579149">
 				<div class="container">
@@ -1624,6 +1337,7 @@
 									</div>
 								</div>
 								<div class="vc_row wpb_row vc_inner vc_row-fluid">
+									{{#each doctors }}
 									<div class="wpb_column vc_column_container col-sm-3">
 										<div class="wpb_wrapper">
 											<!-- ========================== TEASER BOX ==========================-->
@@ -1634,15 +1348,15 @@
 												<div class="figure ">
 
 
-													<a href="profile/dr-p-parthasarathi-reddy/index.html"
-														title="Dr. P. Parthasarathi Reddy" target="">
+													<a href="/profile/{{this.dataValues.id}}"
+														title="{{this.dataValues.title}} {{this.dataValues.firstName}} {{this.dataValues.lastName}}">
 
 
 
-
-														<img src="../i2.wp.com/www.fmsdental.com/wp-content/uploads/2020/03/Dr-pp7584.jpg?fit=600%2C722&amp;#038;ssl=1"
-															alt="DR. P P REDDY">
-
+														{{#if this.image  }}
+														<img src="{{this.image.dataValues.path}}"
+															alt="{{this.dataValues.title}} {{this.dataValues.firstName}} {{this.dataValues.lastName}}">
+														{{/if  }}
 
 
 													</a>
@@ -1653,15 +1367,14 @@
 												<div class="content text-center boxed_special  with_button ">
 
 													<div class="hgroup">
-														<h4>DR. P P REDDY</h4>
-														<p>CHAIRMAN &amp; CEO</p>
+														<h4>{{this.dataValues.title}} {{this.dataValues.firstName}} {{this.dataValues.lastName}}</h4>
+														<p>{{this.dataValues.position}}</p>
 													</div>
 
 
 
 													<div class="link centered">
-														<a href="profile/dr-p-parthasarathi-reddy/index.html" dr.=""
-															p.="" parthasarathi="" reddy=""
+														<a href="/profile/{{this.dataValues.id}}"
 															class="btn btn-xs btn-default"><strong>More</strong></a>
 													</div>
 
@@ -1673,350 +1386,15 @@
 
 										</div>
 									</div>
-									<div class="wpb_column vc_column_container col-sm-3">
-										<div class="wpb_wrapper">
-											<!-- ========================== TEASER BOX ==========================-->
-
-											<div
-												class="teaser_box wpb_content_element text-center   boxed_special same_height_col  with_button ">
-
-												<div class="figure ">
-
-
-													<a href="/dr-shailaja-reddy" title="Dr. Shailaja Reddy"
-														target="">
-
-
-
-
-														<img src="../i2.wp.com/www.fmsdental.com/wp-content/uploads/2020/03/Dr-shailaja7584.jpg?fit=600%2C722&amp;#038;ssl=1"
-															alt="DR. SHAILAJA REDDY">
-
-
-
-													</a>
-
-												</div>
-
-
-												<div class="content text-center boxed_special  with_button ">
-
-													<div class="hgroup">
-														<h4>DR. SHAILAJA REDDY</h4>
-														<p>Implantologist</p>
-													</div>
-
-
-
-													<div class="link centered">
-														<a href="/dr-shailaja-reddy" dr.="" shailaja=""
-															reddy=""
-															class="btn btn-xs btn-default"><strong>More</strong></a>
-													</div>
-
-												</div>
-
-											</div>
-
-											<!-- END======================= TEASER BOX ==========================-->
-
-										</div>
-									</div>
-									<div class="wpb_column vc_column_container col-sm-3">
-										<div class="wpb_wrapper">
-											<!-- ========================== TEASER BOX ==========================-->
-
-											<div
-												class="teaser_box wpb_content_element text-center   boxed_special same_height_col  with_button ">
-
-												<div class="figure ">
-
-
-													<a href="profile/dr-dushyanth-paul/index.html"
-														title="Dr. Dushyanth Paul" target="">
-
-
-
-
-														<img src="../i2.wp.com/www.fmsdental.com/wp-content/uploads/2020/03/Dr-Dushyanth7584.jpg?fit=600%2C722&amp;#038;ssl=1"
-															alt="DR. DUSHYANTH PAUL">
-
-
-
-													</a>
-
-												</div>
-
-
-												<div class="content text-center boxed_special  with_button ">
-
-													<div class="hgroup">
-														<h4>DR. DUSHYANTH PAUL</h4>
-														<p>Maxillofacial Surgeon</p>
-													</div>
-
-
-
-													<div class="link centered">
-														<a href="profile/dr-dushyanth-paul/index.html" dr.=""
-															dushyanth="" paul=""
-															class="btn btn-xs btn-default"><strong>More</strong></a>
-													</div>
-
-												</div>
-
-											</div>
-
-											<!-- END======================= TEASER BOX ==========================-->
-
-										</div>
-									</div>
-									<div class="wpb_column vc_column_container col-sm-3">
-										<div class="wpb_wrapper">
-											<!-- ========================== TEASER BOX ==========================-->
-
-											<div
-												class="teaser_box wpb_content_element text-center   boxed_special same_height_col  with_button ">
-
-												<div class="figure ">
-
-
-													<a href="profile/dr-k-satheesh-kumar-reddy/index.html"
-														title="Dr. K. Satheesh Kumar Reddy" target="">
-
-
-
-
-														<img src="../i0.wp.com/www.fmsdental.com/wp-content/uploads/2020/03/Dr-Sateesh-reddy7584.jpg?fit=600%2C722&amp;#038;ssl=1"
-															alt="DR. SATHEESH REDDY">
-
-
-
-													</a>
-
-												</div>
-
-
-												<div class="content text-center boxed_special  with_button ">
-
-													<div class="hgroup">
-														<h4>DR. SATHEESH REDDY</h4>
-														<p>Orthodontist</p>
-													</div>
-
-
-
-													<div class="link centered">
-														<a href="profile/dr-k-satheesh-kumar-reddy/index.html" dr.=""
-															k.="" satheesh="" kumar="" reddy=""
-															class="btn btn-xs btn-default"><strong>More</strong></a>
-													</div>
-
-												</div>
-
-											</div>
-
-											<!-- END======================= TEASER BOX ==========================-->
-
-										</div>
-									</div>
+									{{/each  }}
 								</div>
 							</div>
 						</div>
-						<div class="wpb_column vc_column_container col-sm-3">
-							<div class="wpb_wrapper">
-								<!-- ========================== TEASER BOX ==========================-->
 
-								<div
-									class="teaser_box wpb_content_element text-center   boxed_special same_height_col  with_button ">
-
-									<div class="figure ">
-
-
-										<a href="profile/dr-ramesh-babu-mandava/index.html"
-											title="Dr. Ramesh Babu Mandava" target="">
-
-
-
-
-											<img src="../i2.wp.com/www.fmsdental.com/wp-content/uploads/2020/03/Dr-Ramesh-babu7584.jpg?fit=600%2C722&amp;#038;ssl=1"
-												alt="DR. RAMESH BABU">
-
-
-
-										</a>
-
-									</div>
-
-
-									<div class="content text-center boxed_special  with_button ">
-
-										<div class="hgroup">
-											<h4>DR. RAMESH BABU</h4>
-											<p>Endodontist</p>
-										</div>
-
-
-
-										<div class="link centered">
-											<a href="profile/dr-ramesh-babu-mandava/index.html" dr.="" ramesh="" babu=""
-												mandava="" class="btn btn-xs btn-default"><strong>More</strong></a>
-										</div>
-
-									</div>
-
-								</div>
-
-								<!-- END======================= TEASER BOX ==========================-->
-
-							</div>
-						</div>
-						<div class="wpb_column vc_column_container col-sm-3">
-							<div class="wpb_wrapper">
-								<!-- ========================== TEASER BOX ==========================-->
-
-								<div
-									class="teaser_box wpb_content_element text-center   boxed_special same_height_col  with_button ">
-
-									<div class="figure ">
-
-
-										<a href="profile/dr-deepti-reddy/index.html" title="Dr. Deepti Reddy" target="">
-
-
-
-
-											<img src="../i2.wp.com/www.fmsdental.com/wp-content/uploads/2020/03/Dr-Deepthi-reddy7584.jpg?fit=600%2C722&amp;#038;ssl=1"
-												alt="DR. DEEPTI REDDY">
-
-
-
-										</a>
-
-									</div>
-
-
-									<div class="content text-center boxed_special  with_button ">
-
-										<div class="hgroup">
-											<h4>DR. DEEPTI REDDY</h4>
-											<p>Orthodontist</p>
-										</div>
-
-
-
-										<div class="link centered">
-											<a href="profile/dr-deepti-reddy/index.html" dr.="" deepti="" reddy=""
-												class="btn btn-xs btn-default"><strong>More</strong></a>
-										</div>
-
-									</div>
-
-								</div>
-
-								<!-- END======================= TEASER BOX ==========================-->
-
-							</div>
-						</div>
-						<div class="wpb_column vc_column_container col-sm-3">
-							<div class="wpb_wrapper">
-								<!-- ========================== TEASER BOX ==========================-->
-
-								<div
-									class="teaser_box wpb_content_element text-center   boxed_special same_height_col  with_button ">
-
-									<div class="figure ">
-
-
-										<a href="profile/dr-smitha-reddy/index.html" title="Dr. Smitha Reddy" target="">
-
-
-
-
-											<img src="../i1.wp.com/www.fmsdental.com/wp-content/uploads/2020/03/Dr-Smitha-reddy7584.jpg?fit=600%2C722&amp;#038;ssl=1"
-												alt="DR. SMITHA REDDY">
-
-
-
-										</a>
-
-									</div>
-
-
-									<div class="content text-center boxed_special  with_button ">
-
-										<div class="hgroup">
-											<h4>DR. SMITHA REDDY</h4>
-											<p>Endodontist</p>
-										</div>
-
-
-
-										<div class="link centered">
-											<a href="profile/dr-smitha-reddy/index.html" dr.="" smitha="" reddy=""
-												class="btn btn-xs btn-default"><strong>More</strong></a>
-										</div>
-
-									</div>
-
-								</div>
-
-								<!-- END======================= TEASER BOX ==========================-->
-
-							</div>
-						</div>
-						<div class="wpb_column vc_column_container col-sm-3">
-							<div class="wpb_wrapper">
-								<!-- ========================== TEASER BOX ==========================-->
-
-								<div
-									class="teaser_box wpb_content_element text-center   boxed_special same_height_col  with_button ">
-
-									<div class="figure ">
-
-
-										<a href="profile/dr-murali-krishna/index.html" title="Dr. Murali Krishna"
-											target="">
-
-
-
-
-											<img src="../i1.wp.com/www.fmsdental.com/wp-content/uploads/2020/03/Dr-murali-krishna7584.jpg?fit=600%2C722&amp;#038;ssl=1"
-												alt="DR. MURALI KRISHNA">
-
-
-
-										</a>
-
-									</div>
-
-
-									<div class="content text-center boxed_special  with_button ">
-
-										<div class="hgroup">
-											<h4>DR. MURALI KRISHNA</h4>
-											<p>Periodontist</p>
-										</div>
-
-
-
-										<div class="link centered">
-											<a href="profile/dr-murali-krishna/index.html" dr.="" murali="" krishna=""
-												class="btn btn-xs btn-default"><strong>More</strong></a>
-										</div>
-
-									</div>
-
-								</div>
-
-								<!-- END======================= TEASER BOX ==========================-->
-
-							</div>
-						</div>
 						<div class="wpb_column vc_column_container col-sm-12">
 							<div class="wpb_wrapper">
 								<div class="plethora_button wpb_content_element text-left btn_block">
-									<a href="https://fmsdental.com/new/consultants/"
+									<a href="/consultants"
 										class="btn btn-primary with-icon icon-left" title="" target="_self">
 
 										<i class="fa fa-sitemap"></i>

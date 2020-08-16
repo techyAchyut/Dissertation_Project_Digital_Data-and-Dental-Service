@@ -1,4 +1,5 @@
 const {sequelize, DataTypes} = require('./sequelize');
+const Image = require('./Image');
 
 const Hospital = sequelize.define('Hospital', {
     name: DataTypes.STRING,

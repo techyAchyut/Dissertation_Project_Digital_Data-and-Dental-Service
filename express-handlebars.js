@@ -1,6 +1,8 @@
 const exphbs = require('express-handlebars');
 const fs = require('fs');
 const moment = require('moment');
+const Hospital = require('./models/hospital');
+const Doctor = require('./models/doctor');
 
 const helpers = {
     backendCss: function() {

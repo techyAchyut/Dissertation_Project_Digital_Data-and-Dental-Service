@@ -1,0 +1,93 @@
+<div class="head_panel">
+    <div style="background-image: url()" class="full_width_photo bg_vtop parallax-window ">
+
+
+        <div class="hgroup">
+
+            <div class="title diagonal-bgcolor-trans   ">
+                <div class="container">
+                    <h1>Profile</h1>
+                </div>
+            </div>
+
+            <div class="subtitle body-bg_section   ">
+                <div class="container">
+                    <p>FMS - an everlasting commitment to a healthy smile.</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<div class="main foo" data-colorset="foo">
+
+
+
+    <section class="vc_row wpb_row vc_row-fluid Wrapper-doctor">
+        <div class="container">
+            <div class="row">
+                <div class="wpb_column vc_column_container col-sm-3">
+                    <div class="wpb_wrapper">
+
+                        <div class="wpb_single_image wpb_content_element vc_align_left">
+
+                            <figure class="wpb_wrapper vc_figure">
+                                <div class="vc_single_image-wrapper   vc_box_border_grey">
+                                    {{#if doctor.img  }}
+                                    <img width="402" height="396" src="{{doctor.img.dataValues.path}}">
+                                    {{/if  }}
+                                </div>
+                            </figure>
+                        </div>
+
+                        <div class="wpb_text_column wpb_content_element ">
+                            <div class="wpb_wrapper">
+                                <p style="text-align: justify;"><span
+                                        style="font-family: 'book antiqua', palatino, serif;"><em><span
+                                                style="color: #ff6600;">&#8220;{{doctor.dataValues.quote}}&#8221;</span></em></span>
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="wpb_column vc_column_container col-sm-9">
+                    <div class="wpb_wrapper">
+
+                        <div class="wpb_text_column wpb_content_element ">
+                            <div class="wpb_wrapper">
+                                <h2>{{doctor.dataValues.title}} {{doctor.dataValues.firstName}} {{doctor.dataValues.lastName}}
+                                </h2>
+                                {{{doctor.dataValues.description}}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="vc_row wpb_row vc_row-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="wpb_column vc_column_container col-sm-12">
+                    <div class="wpb_wrapper">
+
+                        <div class="wpb_text_column wpb_content_element ">
+                            <div class="wpb_wrapper">
+                                <p>&nbsp;</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

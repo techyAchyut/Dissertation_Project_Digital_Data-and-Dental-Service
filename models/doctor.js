@@ -5,6 +5,7 @@ const Doctor = sequelize.define('Doctor', {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     gender: DataTypes.ENUM(['Male', 'Female', 'Other']),
+    position: DataTypes.STRING,
     quote: DataTypes.STRING,
     facebook: {
         type: DataTypes.STRING,

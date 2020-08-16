@@ -1,8 +1,28 @@
 const express = require('express');
 const router = express.Router();
+const Hospital = require('../models/hospital');
+const Doctor = require('../models/doctor');
+const { eagerLoadHospital, eagerLoadDoctor } = require('../helpers/eagerLoad');
 
-router.get('', function(request, response) {
-    response.render('index');
+router.get('', async function(request, response) {
+    const chunkSize = 3;
+    const Rawhospitals = await Hospital.findAll({});
+    const Rawdoctors = await Doctor.findAll({});
+
+    const hospitals = await eagerLoadHospital(Rawhospitals);
+    const doctors = await eagerLoadDoctor(Rawdoctors);
+
+    // console.log(hospitals[1]);
+
+    const chunkHospitals = [];
+    const chunkDoctors = [];
+    for(let i = 0; i < hospitals.length; i+=chunkSize) {
+        chunkHospitals.push(hospitals.slice(i, i + chunkSize));
+    }
+    // for(let i = 0; i < doctors.length; i+=chunkSize) {
+    //     chunkDoctors.push(doctors.slice(i, i + chunkSize));
+    // }
+    response.render('index', {hospitals: chunkHospitals, doctors});
 });
 
 
@@ -24,12 +44,10 @@ router.get('/location', function(request, response) {
 router.get('/fms-awards', function(request, response) {
     response.render('fms-awards/fms-awards');
 });
-router.get('/best-dentist-in-hyderabad', function(request, response) {
-    response.render('best-dentist-in-hyderabad/best-dentist-in-hyderabad');
-});
-router.get('/dr-shailaja-reddy', function(request, response) {
-    response.render('dr-shailaja-reddy/dr-shailaja-reddy');
-});
+// router.get('/best-dentist-in-hyderabad', function(request, response) {
+//     response.render('best-dentist-in-hyderabad/best-dentist-in-hyderabad');
+// });
+
 router.get('/crooked-teeth', function(request, response) {
     response.render('crooked-teeth/crooked-teeth');
 });

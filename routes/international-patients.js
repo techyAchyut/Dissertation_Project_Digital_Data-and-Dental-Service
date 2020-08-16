@@ -8,7 +8,7 @@ const routes = [
 	"dental-tourism-hyderabad",
 	"dental-tourism-cochin",
 	"why-fms",
-	"international-patient-customer-care",
+	// "international-patient-customer-care",
 	"visa-travel-and-accommodation",
 	"explore-india",
 	"plan-your-trip",
