@@ -94,7 +94,7 @@ var toastr = {
 function showModal({url, method = 'GET'}) {
     ajaxRequest({url, method}, response => {
         if(response.data) {
-            $('#md-modal-main').html(response.data).modal('show');
+            $('#md-modal-main').html(response.data).modal({backdrop:'static'});
         } else {
             toastr.error(response.responseJSON.message || 'Something went wrong.', 'Error');
         }
