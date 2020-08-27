@@ -83,5 +83,12 @@ router.post('/admin/hospital/:hospital_id/delete', function(request, response) {
     .catch(err => response.status(422).json({message: err.message}));
 });
 
+router.get('/visit-guide/:hospital_id', function(request, response) {
+    Hospital.findByPk(request.params.hospital_id).then(hospital => {
+        response.render('about/visit-guide', {hospital: hospital.dataValues});
+    })
+    .catch(err => response.status(422).json({message: err.message}));
+});
+
 module.exports = router;
 

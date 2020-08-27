@@ -106,17 +106,26 @@
             -webkit-transform: rotate(330deg) translate(0, -130%);
             -webkit-animation-delay: -0.0833s;
         }
+
         .main-image {
             max-width: 100% !important;
             width: 100%;
         }
-        .main-image img{margin: 0 auto;}
-        .control-label {padding-top: 10px;}
+
+        .main-image img {
+            margin: 0 auto;
+        }
+
+        .control-label {
+            padding-top: 10px;
+        }
+
         .form-control-sm {
             font-size: 13px;
             height: 36px;
             padding: 6px;
         }
+
         [error-for] {
             background-color: #ea4335;
             border-color: #ea4335;
@@ -125,7 +134,10 @@
             margin: 5px 0 0 0;
             display: none;
         }
-        .d-block {display: block !important;}
+
+        .d-block {
+            display: block !important;
+        }
     </style>
 </head>
 
@@ -150,7 +162,8 @@
                                 </li>
                                 <li><a href="#"><span class="icon mdi mdi-face"></span> Account</a></li>
                                 <li><a href="#"><span class="icon mdi mdi-settings"></span> Settings</a></li>
-                                <li><a href="#"><span class="icon mdi mdi-power"></span> Logout</a></li>
+                                <li><a href="javascript:logoutUser();"><span class="icon mdi mdi-power"></span>
+                                        Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -254,9 +267,9 @@
                         <div class="left-sidebar-content">
                             <ul class="sidebar-elements">
                                 <li class="divider">Menu</li>
-                                <li class="active"><a href="/admin/dashboard"><i
-                                            class="icon mdi mdi-home"></i><span>Dashboard</span></a>
-                                </li>
+                                {{!-- <li class="active"><a href="/admin/employees"><i
+                                            class="icon mdi mdi-home"></i><span>Employees</span></a>
+                                </li> --}}
                                 <li class=""><a href="/admin/hospitals"><i
                                             class="icon mdi mdi-hospital-alt"></i><span>Hospitals</span></a>
                                 </li>
@@ -301,7 +314,7 @@
                         </div>
                     </div>
                     <div class="modal-body" id="imageModalBody">
-                        
+
                     </div>
                 </div>
             </div>
@@ -309,7 +322,8 @@
         <div id="md-footer-primary-preview" tabindex="-1" role="dialog" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-body xs-pt-20" style="display: flex; align-items: center;justify-content: space-between;">
+                    <div class="modal-body xs-pt-20"
+                        style="display: flex; align-items: center;justify-content: space-between;">
                         <div>
                             <button class="btn btn-primary xs-mr-5 makeMainImage" type="button">
                                 <i class="mdi mdi-settings"></i> &nbsp;Make Main Image
@@ -330,7 +344,7 @@
     <script src="/resources/backend/js/image.js"></script>
     <script src="/resources/backend/js/summernote.min.js"></script>
     <script>
-        $.fn.addLoader = function() {
+        $.fn.addLoader = function () {
             this.html(`<div class="spinner">
                             <div class="bar1"></div>
                             <div class="bar2"></div>
@@ -358,6 +372,32 @@
             $('.sidebar-elements a[href="' + path + '"]').parent().addClass('active').siblings('.active').removeClass('active');
         })(location.pathname)
 
+        function logoutUser() {
+            localStorage.removeItem('_token');
+            setCookie('_token', '', -1);
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
     </script>
 </body>
 
