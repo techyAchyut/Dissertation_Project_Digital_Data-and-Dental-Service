@@ -1,0 +1,30 @@
+<div class="modal-dialog full-width">
+    <div class="modal-content" style="max-width: 900px;">
+        <div class="modal-header">
+            <div style="display: flex;justify-content: space-between;">
+                <h3 class="modal-title">{{appointment.name }}</h3>
+                <button type="button" data-dismiss="modal" aria-hidden="true" class="close"><span
+                        class="mdi mdi-close"></span></button>
+            </div>
+        </div>
+        <div class="modal-body">
+            <form action="/admin/appointment/{{ appointment.id }}/update" id="hospitalUpdate">
+                <div class="form-group">
+                    <label>Query</label>
+                    <textarea name="query" rows="15" class="form-control descriptionField">{{{ appointment.query }}}</textarea>
+                    <div class="alert error-label" error-for="name"></div>
+                </div>
+                <div class="xs-pt-15 text-right">
+                    <button class="btn btn-space btn-default" type="button" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-space btn-primary">Update Query</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.descriptionField').summernote({
+        height: 350
+    });
+</script>

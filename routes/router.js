@@ -3,6 +3,9 @@ const router = express.Router();
 const Hospital = require('../models/hospital');
 const Doctor = require('../models/doctor');
 const { eagerLoadHospital, eagerLoadDoctor } = require('../helpers/eagerLoad');
+const { body, validationResult } = require('express-validator');
+const responseErrors = require('../helpers/responseErrors');
+const Appointment = require('../models/appointment');
 
 router.get('', async function(request, response) {
     const chunkSize = 3;
@@ -27,7 +30,29 @@ router.get('', async function(request, response) {
 
 
 router.get('/appointment-booking', function(request, response) {
-    response.render('more/appointment-booking');
+    Hospital.findAll({}).then(hospitals => {
+        response.render('more/appointment-booking', {hospitals});
+    }).catch(e => response.send(e.message));
+});
+
+router.post('/appointment/create', [
+    body('name').exists({checkFalsy: true}),
+    body('phone').exists({checkFalsy: true}),
+    body('email').exists({checkFalsy: true}).isEmail(),
+    body('date').exists({checkFalsy: true}),
+    body('branch').exists({checkFalsy: true}),
+    body('practice').exists({checkFalsy: true}),
+    body('purpose').exists({checkFalsy: true}),
+    body('query').exists({checkFalsy: true}),
+], function(request, response) {
+    try {
+        validationResult(request).throw();
+        Appointment.create(request.body).then(appt => {
+            response.json(appt);
+        }).catch(err => response.status(422).json({message: err.message}));
+    } catch (error) {
+        response.status(422).json(responseErrors(error.mapped()));
+    }
 });
 
 router.get('/location', function(request, response) {

@@ -267,9 +267,9 @@
                         <div class="left-sidebar-content">
                             <ul class="sidebar-elements">
                                 <li class="divider">Menu</li>
-                                {{!-- <li class="active"><a href="/admin/employees"><i
-                                            class="icon mdi mdi-home"></i><span>Employees</span></a>
-                                </li> --}}
+                                <li class="active"><a href="/admin/appointments"><i
+                                            class="icon mdi mdi-home"></i><span>Appointments</span></a>
+                                </li>
                                 <li class=""><a href="/admin/hospitals"><i
                                             class="icon mdi mdi-hospital-alt"></i><span>Hospitals</span></a>
                                 </li>
@@ -375,6 +375,7 @@
         function logoutUser() {
             localStorage.removeItem('_token');
             setCookie('_token', '', -1);
+            location.assign('/');
         }
 
         function setCookie(cname, cvalue, exdays) {

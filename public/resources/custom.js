@@ -47,3 +47,22 @@ function processForm(response, form) {
         }
     }
 }
+
+jQuery('.wpcf7-datetime').datepicker({
+    dateFormat: 'yy-mm-dd'
+});
+
+jQuery(document).on('submit', '#appointmentForm', function(e) {
+    ajaxRequest({
+        url: 'appointment/create',
+        method: 'POST',
+        data: jQuery('#appointmentForm').serializeArray()
+    }, function(response) {
+        if(response.data) {
+            alert('Congratulations!\nYou query is successfully submitted.');
+            location.assign('/appointment-booking');
+        } else {
+            alert('Fill all the blank fields before submitting!')
+        }
+    });
+});

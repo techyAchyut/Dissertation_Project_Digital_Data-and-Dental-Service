@@ -30,49 +30,30 @@
     <div class="row">
       <div class="wpb_column vc_column_container col-sm-6 light_section margin_bottom_grid">
         <div class="wpb_wrapper">
-          <div role="form" class="wpcf7" id="wpcf7-f5221-p564-o1" lang="en-US" dir="ltr">
-            <div class="screen-reader-response" aria-live="polite"></div>
-            <form action="https://www.fmsdental.com/appointment-booking/#wpcf7-f5221-p564-o1" method="post"
-              class="wpcf7-form" novalidate="novalidate">
-              <div style="display: none;">
-                <input type="hidden" name="_wpcf7" value="5221">
-                <input type="hidden" name="_wpcf7_version" value="5.1.9">
-                <input type="hidden" name="_wpcf7_locale" value="en_US">
-                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5221-p564-o1">
-                <input type="hidden" name="_wpcf7_container_post" value="564">
-              </div>
+          <div >
+            <form action="javascript:;" method="post" id="appointmentForm">
               <p>Full Name: (*)<br>
-                <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value size="40"
+                <span class="wpcf7-form-control-wrap your-name"><input type="text" name="name" value size="40"
                     class="wpcf7-form-control wpcf7-form-control form-control wpcf7-validates-as-required"
                     aria-required="true" aria-invalid="false"></span> </p>
               <p>Phone Number: (*)<br>
-                <span class="wpcf7-form-control-wrap tel-760"><input type="tel" name="tel-760" value size="40"
+                <span class="wpcf7-form-control-wrap tel-760"><input type="tel" name="phone" value size="40"
                     class="wpcf7-form-control wpcf7-form-control form-control wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel"
                     aria-required="true" aria-invalid="false"></span> </p>
               <p>Email Id: (*)<br>
-                <span class="wpcf7-form-control-wrap email-71"><input type="email" name="email-71" value size="40"
+                <span class="wpcf7-form-control-wrap email-71"><input type="email" name="email" value size="40"
                     class="wpcf7-form-control wpcf7-form-control form-control wpcf7-form-control form-control wpcf7-validates-as-required wpcf7-validates-as-email"
                     aria-required="true" aria-invalid="false"></span> </p>
               <p>Date Of Appointment: (*)<br>
-                <span class="wpcf7-form-control-wrap datetime-875"><input type="text" name="datetime-875" value
+                <span class="wpcf7-form-control-wrap datetime-875"><input type="text" name="date" value
                     size="40" class="wpcf7-form-control wpcf7-date wpcf7-datetime"> </span> </p>
-              <p>Preferred Branch Of FMS Dental:<br>
-                <span class="wpcf7-form-control-wrap Branch"><select name="Branch"
+              <p>Preferred Dental Hospital:<br>
+                <span class="wpcf7-form-control-wrap Branch"><select name="branch"
                     class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true"
                     aria-invalid="false">
-                    <option value="Any Branch">Any Branch</option>
-                    <option value="Jubilee Hills">Jubilee Hills</option>
-                    <option value="Koti">Koti</option>
-                    <option value="Kukatpally">Kukatpally</option>
-                    <option value="Punjagutta">Punjagutta</option>
-                    <option value="Dilsukhnagar">Dilsukhnagar</option>
-                    <option value="Secunderabad">Secunderabad</option>
-                    <option value="Langar House">Langar House</option>
-                    <option value="A S Rao Nagar">A S Rao Nagar</option>
-                    <option value="Kondapur">Kondapur</option>
-                    <option value="Chandanagar">Chandanagar</option>
-                    <option value="Vanasthalipuram">Vanasthalipuram</option>
-                    <option value="Cochin (Kochi)">Cochin (Kochi)</option>
+                    {{#each hospitals }}
+                    <option value="{{this.dataValues.name}}">{{this.dataValues.name}}</option>
+                    {{/each  }}
                   </select></span></p>
               <p>How did you know about our practice:<br>
                 <span class="wpcf7-form-control-wrap practice"><select name="practice"
@@ -88,7 +69,7 @@
                   </select></span>
               </p>
               <p>Purpose:<br>
-                <span class="wpcf7-form-control-wrap Purpose"><select name="Purpose"
+                <span class="wpcf7-form-control-wrap Purpose"><select name="purpose"
                     class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true"
                     aria-invalid="false">
                     <option value="Appointment">Appointment</option>
@@ -99,10 +80,10 @@
                   </select></span>
               </p>
               <p>Query: (*)<br>
-                <span class="wpcf7-form-control-wrap Chiefcomplaint"><textarea name="Chiefcomplaint" cols="40" rows="10"
+                <span class="wpcf7-form-control-wrap Chiefcomplaint"><textarea name="query" cols="40" rows="10"
                     class="wpcf7-form-control wpcf7-form-control wpcf7-form-control form-control"
                     aria-invalid="false"></textarea></span></p>
-              <p>[recaptcha]</p>
+              <p>&nbsp;</p>
               <p><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit btn btn-primary"></p>
               <div class="wpcf7-response-output wpcf7-display-none" aria-hidden="true"></div>
             </form>
@@ -229,11 +210,3 @@
 </section>
 
 
-
-
-<div id="new_comment">
-  <div class="container">
-    <div class="new_comment">
-    </div>
-  </div>
-</div>
